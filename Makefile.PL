@@ -4,5 +4,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     'NAME'		=> 'HTML::Stitchery',
     'VERSION_FROM'	=> 'Stitchery.pm', # finds $VERSION
-    'PREREQ_PM'		=> {}, # e.g., Module::Name => 1.1
+    'PREREQ_PM'		=> {
+      Set::Array => 0.05
+    }, # e.g., Module::Name => 1.1
 );

@@ -1,5 +1,5 @@
 package HTML::Stitchery;
-
+ 
 use Set::Array;
 use Data::Dumper;
 
@@ -9,7 +9,7 @@ use warnings;
 
 our @ISA = qw();
 
-our $VERSION = sprintf '%2d.%02d', q$Revision: 1.4 $ =~ /(\d+)\.(\d+)/;
+our $VERSION = sprintf '%2d.%02d', q$Revision: 1.5 $ =~ /(\d+)\.(\d+)/;
 
 
 # Preloaded methods go here.
