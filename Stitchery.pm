@@ -9,7 +9,7 @@ use warnings;
 
 our @ISA = qw();
 
-our $VERSION = '0.02';
+our $VERSION = sprintf '%2d.%02d', q$Revision: 1.4 $ =~ /(\d+)\.(\d+)/;
 
 
 # Preloaded methods go here.
@@ -121,6 +121,13 @@ sub _text {
     $self->{node}->splice_content(0, 1, $text);
 }
 
+sub _value {
+    my ($self,$value) = @_;
+#    die "_TEXT($self,$text);";
+#    $self->{node}->splice_content(0, 1, __escape_text($text));
+    $self->{node}->attr('value', $value);
+}
+
 sub _aref { 
     my ($self, $aref) = @_;
     
@@ -175,3 +182,14 @@ sub HTML::Element::dump_html
 
 1;
 __END__
+
+=head1 NAME
+
+HTML::Stitchery - support methods for weaving HTML with HTML::Seamstress
+
+=head1 AUTHOR
+
+T.M. Brannon <tbone@cpan.org>
+
+=cut
+
