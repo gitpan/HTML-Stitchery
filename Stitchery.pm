@@ -1,6 +1,6 @@
 package HTML::Stitchery;
 
-use Data::DRef qw(:dref_access);
+use Set::Array;
 use Data::Dumper;
 
 use 5.006;
@@ -9,7 +9,7 @@ use warnings;
 
 our @ISA = qw();
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 # Preloaded methods go here.
@@ -116,10 +116,18 @@ sub href_id {
 
 sub _text {
     my ($self,$text) = @_;
-#    warn "_TEXT($self,$text);";
-    $self->{node}->splice_content(0, 1, __escape_text($text));
+#    die "_TEXT($self,$text);";
+#    $self->{node}->splice_content(0, 1, __escape_text($text));
+    $self->{node}->splice_content(0, 1, $text);
 }
 
+sub _aref { 
+    my ($self, $aref) = @_;
+    
+    warn "AREF: ", Data::Dumper::Dumper(\@_);
+
+    my $r = Set::Array->new(@$aref);
+}
 
     
 
